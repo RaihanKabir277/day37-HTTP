@@ -58,5 +58,13 @@ update_data = {
 
 }
 
-update_response = requests.put(url=put_endpoint, json=update_data, headers=headers)
-print(update_response.text)
+# update_response = requests.put(url=put_endpoint, json=update_data, headers=headers)
+# print(update_response.text)
+
+# --------- Delete method -----------
+
+delete_endpoint = f"{pixela_api}/{USERNAME}/graphs/{GRAPH_ID}/{DATE}"
+
+delete_response = requests.delete(url=delete_endpoint, headers=headers)
+print(delete_response.text)
+
