@@ -1,8 +1,9 @@
 import requests
-
+from datetime import datetime
 
 USERNAME = "raihank"
 TOKEN = "12345678iu"
+GRAPH_ID = "graph1"
 pixela_api = "https://pixe.la/v1/users"
 
 user_params = {
@@ -23,7 +24,7 @@ headers = {
 }
 
 graph_config = {
-    "id" : "graph1",
+    "id" : GRAPH_ID,
     "name" : "Cycling Graph",
     "unit" : "km",
     "type" : "float",
@@ -35,10 +36,13 @@ graph_config = {
 
 
 #  -------- step 4 post value to the graph --------
-value_endpoint = f"{pixela_api}/{USERNAME}/graphs/graph1"
+value_endpoint = f"{pixela_api}/{USERNAME}/graphs/{GRAPH_ID}"
+
+today = datetime.now()
+# print(today.strftime("%Y%m%d"))
 
 value_config = {
-    "date" : "20250916",
+    "date" : today.strftime("%Y%m%d"),
     "quantity" : "9",
 }
 
