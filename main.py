@@ -40,11 +40,23 @@ value_endpoint = f"{pixela_api}/{USERNAME}/graphs/{GRAPH_ID}"
 
 today = datetime.now()
 # print(today.strftime("%Y%m%d"))
+DATE = today.strftime("%Y%m%d")
 
 value_config = {
-    "date" : today.strftime("%Y%m%d"),
+    "date" : DATE,
     "quantity" : "9",
 }
 
-value_response = requests.post(url=value_endpoint, json=value_config, headers=headers)
-print(value_response.text)
+# value_response = requests.post(url=value_endpoint, json=value_config, headers=headers)
+# print(value_response.text)
+
+# ----------- put method ----------
+put_endpoint = f"{pixela_api}/{USERNAME}/graphs/{GRAPH_ID}/{DATE}"
+
+update_data = {
+    "quantity" : "12.5",
+
+}
+
+update_response = requests.put(url=put_endpoint, json=update_data, headers=headers)
+print(update_response.text)
