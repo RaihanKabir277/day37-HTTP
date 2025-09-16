@@ -30,7 +30,6 @@ This project demonstrates how to use RESTful APIs (`POST`, `PUT`, `DELETE`) in P
 
 # Create Graph (Step 2)
 - graph_response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
-
 ---
 
 # Post Value to Graph (Step 4)
