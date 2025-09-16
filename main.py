@@ -30,7 +30,17 @@ graph_config = {
     "color" : "ajisai",
 }
 
-graph_response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
-print(graph_response.text)
+# graph_response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
+# print(graph_response.text)
 
 
+#  -------- step 4 post value to the graph --------
+value_endpoint = f"{pixela_api}/{USERNAME}/graphs/graph1"
+
+value_config = {
+    "date" : "20250916",
+    "quantity" : "9",
+}
+
+value_response = requests.post(url=value_endpoint, json=value_config, headers=headers)
+print(value_response.text)
